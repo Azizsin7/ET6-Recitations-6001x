@@ -38,3 +38,11 @@ Example Scenarios:
     Input: 0
     Output: "The number is zero"
 """
+
+x = float(input("Enter a number: "))
+if x > 0:
+    print("The number is positive")
+elif x < 0:
+    print("The number is negative")
+else:
+    print("The number is zero")
