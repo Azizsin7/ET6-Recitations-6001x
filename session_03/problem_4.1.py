@@ -32,3 +32,11 @@ Step 4: Close the file after writing.
 Step 5: Open the same file in read mode, read its content, and print each line.
 Step 6: Close the file after reading.
 """
+# circle_utils.py
+
+pi = 3.14159
+
+def area(radius):
+    """Returns the area of a circle given its radius."""
+    return pi * (radius ** 2)
+

@@ -39,26 +39,29 @@ print(find_char_bisection("acegikm", "g"))  # Output: 3
 print(find_char_bisection("acegikm", "m"))  # Output: 6  
 print(find_char_bisection("acegikm", "b"))  # Output: -1  (not found) 
 """
+def find_char_bisection(sorted_str, target):
+    """Search for a target character in a sorted string using bisection search."""
+    low = 0  # Starting index of the search range
+    high = len(sorted_str) - 1  # Ending index of the search range
 
-    #Search for a target character in a sorted string using bisection search.
-    # Starting index of the search range
+    while low <= high:
+        mid = (low + high) // 2  # Calculate the middle index
+        mid_char = sorted_str[mid]  # Character at the middle index
 
-    # Ending index of the search range
+        if mid_char == target:
+            return mid  # Target found, return its position
+        elif mid_char < target:
+            low = mid + 1  # Target is in the right half, adjust low index
+        else:
+            high = mid - 1  # Target is in the left half, adjust high index
 
-
-    # Calculate the middle index
-    
-    # Character at the middle index
-
-    
-    # Target found, return its position
-  
-    # Target is in the right half, adjust low index
-   
-    # Target is in the left half, adjust high index
-
-     # Target not found, return -1
-
+    return -1  # Target not found, return -1
 
 # Test cases
+print(find_char_bisection("acegikm", "g"))  # Output: 3
+print(find_char_bisection("acegikm", "m"))  # Output: 6
+print(find_char_bisection("acegikm", "b"))  # Output: -1 (not found)
+
+
+
 

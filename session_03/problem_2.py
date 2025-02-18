@@ -19,15 +19,16 @@ In each iteration, add the current number to total.
 Return the final value of total.
 Test the function with several values of n (e.g., 5, 10, 100).
 """
-
+def sum_n_iterative(n):
     """Returns the sum of the first n natural numbers using a loop."""
-        # Initialize the accumulator variable to store the sum
+    total = 0  # Initialize the accumulator variable to store the sum
 
-        # Iterate from 1 to n (inclusive)
-  
-        # Add the current number i to total
+    for i in range(1, n + 1):  # Iterate from 1 to n (inclusive)
+        total += i  # Add the current number i to total
 
-        # Return the final sum
-
+    return total  # Return the final sum
 # Test cases
+print(sum_n_iterative(5))   # Output: 15
+print(sum_n_iterative(10))  # Output: 55
+print(sum_n_iterative(100)) # Output: 5050
 
