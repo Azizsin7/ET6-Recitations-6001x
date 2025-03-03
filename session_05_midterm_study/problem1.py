@@ -52,27 +52,31 @@ Instructions
   - If base^exp is closer, return exp.
   - Otherwise, increment exp and continue the loop.
   """
-#def closest_power(base, num):
+def closest_power(base, num):
     '''
     base: an integer greater than 1
     num: an integer greater than 0
     Returns: the exponent (int) such that base^exp is closest to num
     '''
     # Define variables
-    
+    exp = 0
     # Convert num to integer
-   
+    num = int(num)
 
     # Iterate to find the closest exponent
-    
+    while base ** (exp + 1) < num:
+        exp += 1
 
     # Compare which power is closer to num
-   
+    beforeInc = abs(num - base ** exp)
+    afterInc = abs(num - base ** (exp + 1))
 
-  
-"""
+    if afterInc >= beforeInc:
+        return exp
+    else:
+        return exp + 1
+
 # Example cases
 print(closest_power(3, 12))  # Output: 2
 print(closest_power(4, 12))  # Output: 2
 print(closest_power(4, 1))   # Output: 0
-"""

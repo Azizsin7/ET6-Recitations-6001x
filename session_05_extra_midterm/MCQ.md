@@ -25,7 +25,7 @@ L = {'1':1, '2':2, '3':3}
 - All of the above.
 - None of the above.
 
-✅ **Correct Answer:** The loop will always immediately terminate.
+✅ **Correct Answer:** All of the above.
 
 ### Question 3
 **In Python, which of the following is a mutable object?**

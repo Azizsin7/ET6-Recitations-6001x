@@ -23,3 +23,21 @@ Implementation Steps:
 - Identify numbers that occur an odd number of times.
 - Return the largest such number, or `None` if no odd-occurring number exists.
 """
+def largest_odd_times(L):
+    """ 
+    Assumes L is a non-empty list of ints
+    Returns the largest element of L that occurs an odd number 
+    of times in L. If no such element exists, returns None 
+    """
+
+    tmp_set = set(L)  # Get unique elements
+
+    while len(tmp_set) > 0:
+        max_val = max(tmp_set)  # Get the largest remaining element
+        if (max_val) % 2 != 0:  # Check if it appears an odd number of times
+            return max_val
+        else:
+            tmp_set.remove(max_val)  # Remove and continue checking
+
+    return None  # If no odd-occurring number is found
+print(largest_odd_times([2,5,6,7,8,9,7,7]))

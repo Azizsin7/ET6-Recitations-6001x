@@ -72,4 +72,50 @@ Created on Wed Feb 19 13:38:16 2025
     
 
     # Compute difference (keys in d2 but not in d1)
+def dict_interdiff(d1, d2):
+    '''
+    d1, d2: Dictionaries with integer keys and values.
+    Returns: A tuple (intersect, difference):
+      - intersect: Dictionary of common keys with function `f` applied to values.
+      - difference: Dictionary of unique key-value pairs from `d1` and `d2`.
+    '''
+    
+    # Declare empty dictionaries for intersection and difference
+    intersect = {}
+    difference = {}
+
+    # Get keys from both dictionaries
+    d1_keys = d1.keys()
+    d2_keys = d2.keys()
+
+    # Compute intersection (apply function f to common keys)
+    for key in d1_keys:
+        if key in d2_keys:
+            intersect[key] = f(d1[key], d2[key])
+
+    # Compute difference (keys in d1 but not in d2)
+    for key in d1_keys:
+        if key not in d2_keys:
+            difference[key] = d1[key]
+
+    # Compute difference (keys in d2 but not in d1)
+    for key in d2_keys:
+        if key not in d1_keys:
+            difference[key] = d2[key]
+
+    return (intersect, difference)
+
+def f(a, b):
+    return a > b
+
+d1 = {1: 30, 2: 20, 3: 30}
+d2 = {1: 40, 2: 50, 3: 60}
+
+print(dict_interdiff(d1, d2))
+"""
+d1 = {1: 30, 2: 20, 3: 30, 5: 80}
+d2 = {1: 40, 2: 50, 3: 60, 4: 70, 6: 90}
+def f(a, b):
+    return a + b
+print(dict_interdiff(d1, d2))"""
    
