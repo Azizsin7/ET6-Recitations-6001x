@@ -55,7 +55,7 @@ print(car1.color)  # Output: Red
 
 ---
 
-##  Key Takeaways
+##  Conclusion 
 ✔ `__init__` **is the best place** to define attributes that all instances should have.  
 ✔ Attributes **can be added dynamically** outside `__init__`.  
 ✔ Attributes **can be created in other methods**.  
