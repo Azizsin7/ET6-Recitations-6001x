@@ -21,7 +21,7 @@ def search(L, e):
 
 ---
 
-### **2️⃣ `bisect_search1(L, e)` (Binary Search with Slicing - Inefficient)**
+### **2️⃣ `bisect_search1(L, e)` (With Slicing - Inefficient)**
 ```python
 def bisect_search1(L, e):
     if L == []:
@@ -39,12 +39,12 @@ def bisect_search1(L, e):
 - **Explanation:**
   - This function **halves the search space** at each step (which suggests $O(log n) $).
   - However, **it slices the list (`L[:half]`, `L[half:]`) at each step**, which requires copying part of the list, leading to an **extra cost that sums to \( O(n) \) overall**.
-  - **Total complexity: $O(n log n) $ because of both slicing and recursive calls.**
+  - **Total complexity:** $O (n log n)$ because of both slicing and recursive calls.
   - ✅ **Important Note:** Slicing (`L[:half]`, `L[half:]`) creates a new list, making `bisect_search1` inefficient compared to using index-based binary search.
 
 ---
 
-### **3️⃣ `bisect_search2(L, e)` (Optimized Binary Search with Indices - Efficient)**
+### **3️⃣ `bisect_search2(L, e)` (Optimized bisection Search with Indices - Efficient)**
 ```python
 def bisect_search2(L, e):
     def bisect_search_helper(L, e, low, high):
@@ -78,7 +78,7 @@ def bisect_search2(L, e):
 | Function | Time Complexity | Explanation |
 |----------|---------------|-------------|
 | **`search(L, e)` (Linear Search on Sorted List)** | \( O(n) \) | Iterates through the list, stopping early if `e` is found or a greater element is encountered. |
-| **`bisect_search1(L, e)` (Binary Search with Slicing)** | $O(n log n) $ | **Inefficient due to slicing**, which copies part of the list at each recursive call, increasing complexity. |
-| **`bisect_search2(L, e)` (Optimized Binary Search with Indices)** | $O(log n) $ | **Efficient binary search**, avoiding slicing by using indices to track the search space, achieving the optimal logarithmic complexity. |
+| **`bisect_search1(L, e)` (with Slicing)** | $O(n log n) $ | **Inefficient due to slicing**, which copies part of the list at each recursive call, increasing complexity. |
+| **`bisect_search2(L, e)` (Optimized bisection Search with Indices)** | $O(log n) $ | **Efficient binary search**, avoiding slicing by using indices to track the search space, achieving the optimal logarithmic complexity. |
 
  **Use `bisect_search2` for efficient searches!** 
